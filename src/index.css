@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-outline-btn {
+    position: relative;
+    background: #160433;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .gradient-outline-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #0CF637, #950DFF);
+  }
+  
+  .gradient-outline-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(12, 246, 55, 0.2);
+  }
+  
+  .hero-image-placeholder {
+    background: linear-gradient(135deg, rgba(12, 246, 55, 0.1), rgba(149, 13, 255, 0.1));
+    backdrop-filter: blur(10px);
+  }
+  
+  .primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(255, 157, 0, 0.3);
+  }
+}
