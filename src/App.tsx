@@ -25,7 +25,7 @@ function App() {
             <div className="order-0 lg:order-1">
               <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden">
                 <img 
-                  src="Home.png" 
+                  src="/Home.png" 
                   alt="Workspace illustration" 
                   className="w-full h-full object-cover"
                 />
