@@ -26,7 +26,7 @@ export default function SignIn () {
               <div className="order-1 lg:order-1">
                 <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden">
                   <img 
-                    src="Group-sign.png" 
+                    src="/Group-sign.png" 
                     alt=" illustration" 
                     className="w-[70%] h-[100%] object-fill"
                   />
