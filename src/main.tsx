@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import App from './App';
 import GetStarted from './GetStarted';
+import SignIn from './SignIn';
+import Category from './Category';
 import './index.css';
 
 // AnimatedRoutes component to wrap Routes with AnimatePresence
@@ -14,6 +16,8 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<App />} />
         <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/category" element={<Category />} />
       </Routes>
     </AnimatePresence>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function GetStarted() {
   return (
@@ -18,7 +19,7 @@ export default function GetStarted() {
       }}
     >
       <Header />
-      <main className="flex flex-1 flex-col items-center justify-center bg-[#160433]/70 min-h-[calc(100vh-4rem)]">
+      <main className="flex flex-1 flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
         <div
           className="bg-white rounded-2xl shadow-lg px-8 py-8 max-w-xl w-full flex flex-col items-center"
           style={{ minHeight: 440 }}
@@ -60,16 +61,17 @@ export default function GetStarted() {
               className="col-span-1 border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-[#13D10F] text-sm"
             />
           </form>
-          <button
-            className="primary-btn bg-[#FF9D00] hover:bg-[#e8890a] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 w-full shadow-2xl"
+          <Link
+            to="/category"
+            className="primary-btn bg-[#FF9D00] hover:bg-[#e8890a] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 w-[50vh] shadow-2xl text-center"
             style={{ boxShadow: '0 8px 32px 0 rgba(44, 44, 44, 0.7)' }}
           >
             GET STARTED
-          </button>
+          </Link>
           <p className="mt-4 text-black text-center text-sm">
             You have an account?{' '}
             <a
-              href="#"
+              href="/sign-in"
               className="text-blue-400 underline hover:text-blue-500 transition-colors"
             >
               Sign In

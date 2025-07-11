@@ -22,10 +22,10 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-4rem)] py-12">
             
             {/* Left Side - Hero Image */}
-            <div className="order-2 lg:order-1">
+            <div className="order-0 lg:order-1">
               <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden">
                 <img 
-                  src="/stock1.png" 
+                  src="Home.png" 
                   alt="Workspace illustration" 
                   className="w-full h-full object-cover"
                 />
@@ -33,14 +33,14 @@ function App() {
             </div>
 
             {/* Right Side - Content */}
-            <div className="order-1 lg:order-2 space-y-8">
+            <div className="home-text order-1 lg:order-2 space-y-8" >
               <div className="space-y-6">
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                   <span className="bg-gradient-to-r from-[#0CF637] to-[#950DFF] bg-clip-text text-transparent">
                     Innovative
                   </span>
                   <br />
-                  workspaces—
+                  workspaces
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
@@ -89,10 +89,10 @@ function App() {
       </main>
 
       {/* Subtle Background Elements */}
-      <div className="fixed inset-0 -z-10">
+      {/* <div className="fixed inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#0CF637] rounded-full opacity-5 blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#950DFF] rounded-full opacity-5 blur-3xl"></div>
-      </div>
+      </div> */}
     </motion.div>
   );
 }

@@ -11,9 +11,12 @@
 @layer components {
   .gradient-outline-btn {
     position: relative;
-    background: #160433;
+    background:
+    linear-gradient(#160433, #160433) padding-box,
+    linear-gradient(90deg, #0CF637, #950DFF) border-box;
+    border-radius: 1rem;
     border: 2px solid transparent;
-    background-clip: padding-box;
+    margin: 0px 4px;
   }
   
   .gradient-outline-btn::before {
@@ -42,5 +45,41 @@
   .primary-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 10px 25px rgba(255, 157, 0, 0.3);
+  }
+}
+
+.tertiary-btn{
+  background-color: rgb(12, 246, 55);
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+ .tertiary-btn:hover {
+    background-color: rgb(9, 180, 40);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(12, 246, 55, 0.2);
+    color: white;
+
+  }
+
+
+@media (max-width: 800px) {
+  /* .hero-image-placeholder {
+    display: none;
+  } */
+
+  .home-text{
+    text-align: center;
+    font-size: 0.5 rem;
+  }
+
+  
+  .gradient-outline-btn{
+    margin: 6px 0px;
+    /* width: 0.5 rem; */
   }
 }
