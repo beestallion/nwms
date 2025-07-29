@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function GetStarted() {
+  const [name, setName] = useState(''); // State to store the username
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    // Navigate to the Category page and pass the username as state
+    navigate('/wrkspace', { state: { name } });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -38,6 +47,8 @@ export default function GetStarted() {
             <input
               type="text"
               placeholder="Username"
+              value={name} // Bind the input value to the state
+              onChange={(e) => setName(e.target.value)} // Update the state on change
               className="col-span-1 border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-[#13D10F] text-sm"
             />
             <input
@@ -61,12 +72,14 @@ export default function GetStarted() {
               className="col-span-1 border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-[#13D10F] text-sm"
             />
           </form>
-          <Link
-            to="/category"
+            <Link to="/category">
+          <button
+            onClick={handleSubmit} // Trigger navigation and pass the username
             className="primary-btn bg-[#FF9D00] hover:bg-[#e8890a] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 w-[50vh] shadow-2xl text-center"
             style={{ boxShadow: '0 8px 32px 0 rgba(44, 44, 44, 0.7)' }}
           >
             GET STARTED
+          </button>
           </Link>
           <p className="mt-4 text-black text-center text-sm">
             You have an account?{' '}

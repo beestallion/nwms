@@ -35,11 +35,11 @@ export default function SignIn () {
 
               {/* Right Side - Content */}
               <div className="order-2 lg:order-2 w-full">
-                <form className="grid grid-cols-2 gap-x-6 gap-y-5 w-[200%] mb-6">
+                <form className="grid grid-cols-1 gap-x-6 gap-y-5 w-full mb-6">
                   <input
                     type="email"
                     placeholder="Email Address"
-                    className="col-span-1 border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-[#13D10F] text-sm"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-[#13D10F] text-sm"
                   />
                 </form>
                 {/* Add more content here as needed */}

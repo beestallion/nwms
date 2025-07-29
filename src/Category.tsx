@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const categories = [
   {
@@ -40,15 +41,17 @@ export default function Category () {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.4 }}
-              className="min-h-screen flex flex-col bg-[#160433] relative"
+              className="min-h-screen flex flex-col bg-[#160433] relative overflow-hidden"
             >
+              <a href="/">
+              <img src="/nlogo.png" alt="Netisens Logo" className="absolute top-6 left-8 w-40 h-auto z-20"  />
+              </a>
               
-              <img src="/nlogo.png" alt="Netisens Logo" className="absolute top-6 left-8 w-40 h-auto z-20" />
-              <br />
               <main className="flex-1 flex flex-col items-center justify-center px-4">
         <h1 className="text-4xl font-bold text-white mt-8 mb-2 text-center">Category</h1>
 
-        <p className="text-lg text-gray-300 mb-10 text-center">Pick your category to proceed: User, Student, or SIWES.</p>
+        <p className="text-sm text-gray-300 mb-10 text-center">Pick your category to proceed:
+ <br/>User, Student, or SIWES...</p>
         <div className="relative flex justify-center items-center mb-10 w-full max-w-4xl h-[370px]">
           {categories.map((cat, idx) => {
             const position = getCardPosition(idx);
@@ -79,7 +82,7 @@ export default function Category () {
               <motion.div
                 key={cat.key}
                 layout
-                transition={{ type: 'spring', stiffness: 700, damping: 20 }}
+                transition={{ type: 'spring', stiffness: 500, damping: 10 }}
                 animate={motionProps}
                 className={`absolute cursor-pointer bg-white rounded-3xl flex flex-col items-center px-8 py-8 w-72 transition-all duration-200 border-2 ${selected === cat.key ? 'border-[#0CF637] scale-105' : 'border-transparent'} ${position}`}
                 style={{ minHeight: 320 }}
@@ -102,12 +105,15 @@ export default function Category () {
             );
           })}
         </div>
+
+        <Link to="/discount">
         <button
           className="mt-2 px-10 py-3 rounded-xl border-2 border-[#0CF637] text-white font-bold text-lg bg-transparent hover:bg-[#0CF637] hover:text-[#160433] transition-all duration-200 flex items-center gap-2"
           onClick={() => alert(`Proceeding as: ${selected.charAt(0).toUpperCase() + selected.slice(1)}`)}
         >
           NEXT <span className="ml-4">→</span>
         </button>
+        </Link>
       </main>
             </motion.div>
     );
